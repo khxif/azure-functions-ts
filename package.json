@@ -1,0 +1,31 @@
+{
+  "name": "function-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/src/functions/*.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "db:studio": "prisma db studio"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0",
+    "@prisma/adapter-pg": "^7.0.1",
+    "@prisma/client": "^7.0.1",
+    "@types/pg": "^8.15.6",
+    "dotenv": "^17.2.3",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "azure-functions-core-tools": "^4.x",
+    "drizzle-kit": "^0.31.7",
+    "prisma": "^7.0.1",
+    "rimraf": "^5.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "5.6"
+  }
+}
