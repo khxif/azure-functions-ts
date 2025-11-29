@@ -1,13 +1,13 @@
 {
   "name": "function-app",
   "version": "1.0.0",
-  "description": "",
   "main": "dist/src/functions/*.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "clean": "rimraf dist",
     "prestart": "npm run clean && npm run build",
+    "postbuild": "prisma generate",
     "start": "func start",
     "db:studio": "prisma db studio"
   },
